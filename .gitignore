@@ -19,3 +19,10 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# fauna stuff
+
+fauna.1.js
+fauna.2.js
+fauna.js
+scripts

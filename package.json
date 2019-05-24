@@ -5,26 +5,29 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "bootstrap": "node ./scripts/bootstrap-fauna-database.js",
+    "checkForFaunaKey": "node ./scripts/check-for-fauna-key.js"
   },
   "dependencies": {
+    "faunadb": "^2.6.1",
+    "node-sass": "^4.11.0",
     "register-service-worker": "^1.6.2",
+    "sass-loader": "^7.1.0",
     "vue": "^2.6.6",
-    "vue-router": "^3.0.1",
-    "vue-slider-component": "^3.0.16"
+    "vue-router": "^3.0.6",
+    "vue-slider-component": "^3.0.28"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-plugin-pwa": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-plugin-pwa": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.4",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
