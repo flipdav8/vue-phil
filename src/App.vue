@@ -9,7 +9,7 @@
     <button @click="onClick()">Click</button>
   </div>
 </template>
-
+<!-- eslint-disable -->
 <script>
 export default {
   methods: {
