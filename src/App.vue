@@ -7,13 +7,26 @@
     <router-view />
     <p>hello</p>
     <button @click="onClick()">Click</button>
+    <button @click="onStopButtonClick()">Stop</button>
+    <button @click="lightOn()">LED on</button>
+    <button @click="lightOff()">LED off</button>
+    <button @click="readKnob()">Knob</button>
+    <p>data: {{ data }} test: {{ test.substring(0, 3) }}</p>
   </div>
 </template>
 <!-- eslint-disable -->
 <script>
 export default {
+  data() {
+    return {
+      data: [],
+      test: "",
+      myChar: ""
+    };
+  },
   methods: {
     onClick() {
+      let vm = this;
       var serviceUuid = 0xffe0;
       var characteristicUuid = 0xffe1;
       console.log("Requesting Bluetooth Device...");
@@ -37,22 +50,17 @@ export default {
         })
         .then(characteristic => {
           let myCharacteristic = characteristic;
+          this.myChar = myCharacteristic;
           return myCharacteristic.startNotifications().then(_ => {
             console.log("> Notifications started");
             myCharacteristic.addEventListener(
               "characteristicvaluechanged",
               function handleNotifications(event) {
-                let value = event.target.value;
-                let a = [];
-                // Convert raw data bytes to hex values just for the sake of showing something.
-                // In the "real" world, you'd use data.getUint8, data.getUint16 or even
-                // TextDecoder to process raw data bytes.
-                for (let i = 0; i < value.byteLength; i++) {
-                  a.push(
-                    "0x" + ("00" + value.getUint8(i).toString(16)).slice(-2)
-                  );
-                }
-                console.log("> " + a.join(" "));
+                let value = new TextDecoder().decode(event.target.value);
+
+                console.log(value);
+
+                vm.test = value;
               }
             );
           });
@@ -60,6 +68,49 @@ export default {
         .catch(error => {
           console.log("Argh! " + error);
         });
+    },
+
+    onStopButtonClick() {
+      if (this.myChar) {
+        this.myChar
+          .stopNotifications()
+          .then(_ => {
+            console.log("> Notifications stopped");
+            this.myChar.removeEventListener(
+              "characteristicvaluechanged",
+              function handleNotifications(event) {
+                //
+              }
+            );
+          })
+          .catch(error => {
+            console.log("Argh! " + error);
+          });
+      }
+    },
+
+    lightOn() {
+      if (this.myChar) {
+        let dataTest = 1;
+        this.myChar.writeValue(new TextEncoder().encode(dataTest));
+        console.log("out");
+      }
+    },
+
+    lightOff() {
+      if (this.myChar) {
+        let dataTest = 0;
+        this.myChar.writeValue(new TextEncoder().encode(dataTest));
+        console.log("out");
+      }
+    },
+
+    readKnob() {
+      if (this.myChar) {
+        let dataTest = 2;
+        this.myChar.writeValue(new TextEncoder().encode(dataTest));
+        console.log("out");
+      }
     }
   }
 };
