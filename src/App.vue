@@ -12,6 +12,12 @@
     <button @click="lightOff()">LED off</button>
     <button @click="readKnob()">Knob</button>
     <p>data: {{ data }} test: {{ test.substring(0, 3) }}</p>
+    <!-- <line-chart class="layer2" ref="line" :chart-data="datacollection"></line-chart> -->
+    <line-back
+      class="layer1"
+      ref="lineBack"
+      :chart-data="chartBackData"
+    ></line-back>
   </div>
 </template>
 <!-- eslint-disable -->
@@ -21,7 +27,24 @@ export default {
     return {
       data: [],
       test: "",
-      myChar: ""
+      myChar: "",
+      chartBackData: {
+        labels: [0, 5, 10, 15, 20, 25, 30],
+        datasets: [
+          {
+            label: "Arch Height",
+            backgroundColor: "transparent",
+            showLine: false,
+            data: [0, 1024]
+          },
+          {
+            label: "Raise",
+            showLine: false,
+            backgroundColor: "transparent",
+            data: [0, 1024]
+          }
+        ]
+      }
     };
   },
   methods: {
@@ -30,6 +53,7 @@ export default {
       var serviceUuid = 0xffe0;
       var characteristicUuid = 0xffe1;
       console.log("Requesting Bluetooth Device...");
+      //.requestDevice({ acceptAllDevices: true })
 
       navigator.bluetooth
         .requestDevice({ filters: [{ services: [serviceUuid] }] })
