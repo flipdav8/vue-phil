@@ -4,7 +4,7 @@
       <router-link to="/">Home hey!</router-link>|
       <router-link to="/about">About Phil</router-link>
     </div>
-    <router-view/>
+    <router-view />
     <p>hello</p>
     <button @click="onClick()">Click</button>
     <button @click="onStopButtonClick()">Stop</button>
@@ -13,7 +13,11 @@
     <button @click="readKnob()">Knob</button>
     <p>data: {{ data }} test: {{ test.substring(0, 3) }}</p>
     <!-- <line-chart class="layer2" ref="line" :chart-data="datacollection"></line-chart> -->
-    <line-back class="layer1" ref="lineBack" :chart-data="chartBackData"></line-back>
+    <line-back
+      class="layer1"
+      ref="lineBack"
+      :chart-data="chartBackData"
+    ></line-back>
   </div>
 </template>
 <!-- eslint-disable -->

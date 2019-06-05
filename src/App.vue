@@ -4,7 +4,7 @@
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
 
     <button @click="onClick()">Click</button>
     <button @click="onStopButtonClick()">Stop</button>
@@ -13,11 +13,15 @@
     <button @click="readKnob()">Knob</button>
     <p>data: {{ data }} test: {{ test.substring(0, 3) }}</p>
     <!-- <line-chart class="layer2" ref="line" :chart-data="datacollection"></line-chart> -->
-    <line-back class="layer1" ref="lineBack" :chart-data="chartBackData"></line-back>
-    <hr>
+    <line-back
+      class="layer1"
+      ref="lineBack"
+      :chart-data="chartBackData"
+    ></line-back>
+    <hr />
     <div style="background: rgb(223, 223, 223, 0.9); border-radius: 6px; ">
       <div style="margin-left: 6px">
-        <br>
+        <br />
         <button
           style="cursor: pointer;  background: transparent; border-radius: 6px; border: solid 1px"
           @click="onClick()"
@@ -25,7 +29,7 @@
           <a href="#">
             <!-- <icon-base width="30" height="30" icon-name="Connect" icon-color="black"> -->
             <icon-base width="30" height="30" icon-name="Connect">
-              <icon-connect/>
+              <icon-connect />
             </icon-base>
           </a>
         </button>
@@ -34,8 +38,13 @@
           style="margin-left: 8px; background: transparent; border-radius: 6px; border: solid 1px "
         >
           <a href="#">
-            <icon-base width="30" height="30" icon-name="Disconnect" icon-color="grey">
-              <icon-disconnect/>
+            <icon-base
+              width="30"
+              height="30"
+              icon-name="Disconnect"
+              icon-color="grey"
+            >
+              <icon-disconnect />
             </icon-base>
           </a>
         </button>
@@ -45,7 +54,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Left/Right">
-              <icon-left/>
+              <icon-left />
             </icon-base>
           </a>
         </button>
@@ -53,8 +62,13 @@
           style="margin-left: 0px; cursor: pointer;  background: transparent;  border-radius: 6px; border: solid 1px"
         >
           <a href="#">
-            <icon-base width="30" height="30" icon-name="Left/Right" icon-color="grey">
-              <icon-right/>
+            <icon-base
+              width="30"
+              height="30"
+              icon-name="Left/Right"
+              icon-color="grey"
+            >
+              <icon-right />
             </icon-base>
           </a>
         </button>
@@ -64,7 +78,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="??">
-              <icon-square/>
+              <icon-square />
             </icon-base>
           </a>
         </button>
@@ -74,7 +88,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Plot">
-              <icon-play/>
+              <icon-play />
             </icon-base>
           </a>
         </button>
@@ -84,7 +98,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Pause">
-              <icon-pause/>
+              <icon-pause />
             </icon-base>
           </a>
         </button>
@@ -93,8 +107,13 @@
           style="margin-left: 0px; cursor: pointer;  background: transparent;  border-radius: 6px; border: solid 1px"
         >
           <a href="#">
-            <icon-base width="30" height="30" icon-name="Record" icon-color="red">
-              <icon-record/>
+            <icon-base
+              width="30"
+              height="30"
+              icon-name="Record"
+              icon-color="red"
+            >
+              <icon-record />
             </icon-base>
           </a>
         </button>
@@ -104,7 +123,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Stop">
-              <icon-stop/>
+              <icon-stop />
             </icon-base>
           </a>
         </button>
@@ -114,7 +133,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Inflate Bladder">
-              <icon-inflate/>
+              <icon-inflate />
             </icon-base>
           </a>
         </button>
@@ -124,7 +143,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Deflate Bladder">
-              <icon-deflate/>
+              <icon-deflate />
             </icon-base>
           </a>
         </button>
@@ -134,7 +153,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Open Valve">
-              <icon-openvalve/>
+              <icon-openvalve />
             </icon-base>
           </a>
         </button>
@@ -144,7 +163,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Close Valve">
-              <icon-closevalve/>
+              <icon-closevalve />
             </icon-base>
           </a>
         </button>
@@ -154,7 +173,7 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Settings">
-              <icon-settings/>
+              <icon-settings />
             </icon-base>
           </a>
         </button>
@@ -164,16 +183,16 @@
         >
           <a href="#">
             <icon-base width="30" height="30" icon-name="Help">
-              <icon-help/>
+              <icon-help />
             </icon-base>
           </a>
         </button>
-        <br>
-        <br>
+        <br />
+        <br />
       </div>
     </div>
 
-    <br>
+    <br />
   </div>
 </template>
 <!-- eslint-disable -->

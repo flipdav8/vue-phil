@@ -1,25 +1,11 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-
-    <!-- <vue-slider v-model="value"></vue-slider> -->
-    <!-- // eslint-disable-next-line -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"></HelloWorld> -->
-  </div>
+  <div class="home"></div>
 </template>
 
 <script>
-// @ is an alias to /src
-import VueSlider from "vue-slider-component";
-import "vue-slider-component/theme/antd.css";
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "home",
-  components: {
-    HelloWorld,
-    VueSlider
-  },
+  components: {},
   data() {
     return {
       value: 50
