@@ -1,0 +1,47 @@
+<template>
+  <!-- <svg xmlns="http://www.w3.org/2000/svg"
+    :width="width"
+    :height="height"
+    viewBox="0 0 18 18"
+    :aria-labelledby="iconName"
+    role="presentation"
+  > -->
+
+  <svg :width="width"
+    :height="height" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"  :aria-labelledby="iconName" role="presentation">
+    <title :id="iconName" lang="en">{{iconName}} </title>
+    <g :fill="iconColor">
+      <slot />
+    </g>
+  </svg>
+ </template>
+<script>
+export default {
+  props: {
+    iconName: {
+      type: String,
+      default: 'box'
+    },
+    width: {
+      type: [Number, String],
+      default: 17.92
+    },
+    height: {
+      type: [Number, String],
+      default: 17.92
+    },
+    iconColor: {
+      type: String,
+      default: 'currentColor'
+    }
+  }
+}
+</script>
+
+<style scoped>
+svg {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-bottom: -2px;
+}
+</style>

@@ -1,8 +1,10 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <vue-slider v-model="value"></vue-slider>
-    <HelloWorld msg="Welcome to Your Vue.js App"></HelloWorld>
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+
+    <!-- <vue-slider v-model="value"></vue-slider> -->
+    <!-- // eslint-disable-next-line -->
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"></HelloWorld> -->
   </div>
 </template>
 
