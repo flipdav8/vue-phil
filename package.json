@@ -10,7 +10,7 @@
     "checkForFaunaKey": "node ./scripts/check-for-fauna-key.js"
   },
   "dependencies": {
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-annotation": "^0.5.7",
     "faunadb": "^2.6.1",
     "node-sass": "^4.11.0",
